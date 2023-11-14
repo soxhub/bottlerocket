@@ -261,6 +261,8 @@ struct KubernetesSettings {
     eviction_soft: HashMap<KubernetesEvictionKey, KubernetesThresholdValue>,
     eviction_soft_grace_period: HashMap<KubernetesEvictionKey, KubernetesDurationValue>,
     eviction_max_pod_grace_period: NonNegativeInteger,
+    eviction_minimum_reclaim: HashMap<KubernetesEvictionKey, KubernetesThresholdValue>,
+    eviction_pressure_transition_period: KubernetesDurationValue,
     kube_reserved: HashMap<KubernetesReservedResourceKey, KubernetesQuantityValue>,
     system_reserved: HashMap<KubernetesReservedResourceKey, KubernetesQuantityValue>,
     allowed_unsafe_sysctls: Vec<SingleLineString>,
