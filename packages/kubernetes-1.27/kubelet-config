@@ -60,6 +60,15 @@ evictionSoftGracePeriod:
 {{#if settings.kubernetes.eviction-max-pod-grace-period}}
 evictionMaxPodGracePeriod: {{settings.kubernetes.eviction-max-pod-grace-period}}
 {{/if}}
+{{#if settings.kubernetes.eviction-minimum-reclaim}}
+evictionMinimumReclaim:
+  {{#each settings.kubernetes.eviction-minimum-reclaim}}
+  {{@key}}: "{{this}}"
+  {{/each}}
+{{/if}}
+{{#if settings.kubernetes.eviction-pressure-transition-period}}
+evictionPressureTransitionPeriod: "{{settings.kubernetes.eviction-pressure-transition-period}}"
+{{/if}}
 {{#if settings.kubernetes.allowed-unsafe-sysctls}}
 allowedUnsafeSysctls: {{settings.kubernetes.allowed-unsafe-sysctls}}
 {{/if}}
